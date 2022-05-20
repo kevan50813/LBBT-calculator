@@ -30,23 +30,23 @@ public class TaxCalculator {
             System.out.println(tax);
         }
 
-        if(price <= 925000){
-            priceRemiader =  125000 - priceRemiader; // no tax paid on the first 125k
+        if(price > 250000 &&price <= 925000){
+          priceRemiader = priceRemiader - 125000;   // no tax paid on the first 125k
             //2% of the next 125k
             tax = tax + ((125000 /100 ) * 2); //append value to total tax to be paid
 
             //5% of the remainder
-            priceRemiader =  125000 - priceRemiader; //125k differnce into next bracket
+          priceRemiader = priceRemiader - 125000;   //125k differnce into next bracket
             tax = tax + ((priceRemiader /100 ) * 5); //append value to total tax to be paid
         }
 
-        if(price <= 1500000){
-            priceRemiader =  125000 - priceRemiader; // no tax paid on the first 125k
+        if(price > 925000 && price <= 1500000){
+          priceRemiader = priceRemiader - 125000;   // no tax paid on the first 125k
             //2% of the next 125k
             tax = tax + ((125000 /100 ) * 2); //append value to total tax to be paid
 
             //5% of the next 250k
-            priceRemiader =  125000 - priceRemiader; //125k differnce into next bracket
+          priceRemiader = priceRemiader - 125000;   //125k differnce into next bracket
             tax = tax + ((250000 /100 ) * 5); //append value to total tax to be paid
 
             //10% of the remaider
@@ -55,12 +55,12 @@ public class TaxCalculator {
         }
 
         if(price > 1500000){
-            priceRemiader =  125000 - priceRemiader; // no tax paid on the first 125k
+          priceRemiader = priceRemiader - 125000;   // no tax paid on the first 125k
             //2% of the next 125k
             tax = tax + ((125000 /100 ) * 2); //append value to total tax to be paid
 
             //5% of the next 250k
-            priceRemiader =  125000 - priceRemiader; //125k differnce into next bracket
+          priceRemiader = priceRemiader - 125000;   //125k differnce into next bracket
             tax = tax + ((250000 /100 ) * 5); //append value to total tax to be paid
 
             //10% of the next 675k
