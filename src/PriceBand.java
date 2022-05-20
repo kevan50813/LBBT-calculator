@@ -3,7 +3,7 @@
 public enum PriceBand {
     BAND_A, // <= 125k
     BAND_B, // 125,001 - 250k
-    BAND_C, // 250,001 - 325k
-    BAND_D, // 325,001 - 750k
-    BAND_E  // >= 750,001
+    BAND_C, // 250,001 - 925k
+    BAND_D, // 925,001 - 1.5 million
+    BAND_E  // > 1.5 million
 }
