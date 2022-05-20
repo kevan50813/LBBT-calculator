@@ -20,7 +20,7 @@ public class House {
             this.priceBand = PriceBand.BAND_D;
         }
 
-        if(price >= 150001){
+        if(price >= 1500001){
             this.priceBand = PriceBand.BAND_E;
         }
     }
