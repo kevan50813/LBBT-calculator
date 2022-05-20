@@ -1,3 +1,5 @@
+package StampDuty;
+
 public class TaxCalculator {
 
     public double calculateLBTT(House h) throws Exception {
@@ -23,7 +25,7 @@ public class TaxCalculator {
         double priceRemiader=price;
         double tax = 0.0;
         if(price <= 250000){
-            priceRemiader =  - 125000; // no tax paid on the first 125k
+            priceRemiader = priceRemiader  - 125000; // no tax paid on the first 125k
 
             //2% of the remiader , sicne it sonly in the 2nd tax bracket
             tax = tax + ((priceRemiader /100 ) * 2); //append value to total tax to be paid
@@ -36,7 +38,7 @@ public class TaxCalculator {
             tax = tax + ((125000 /100 ) * 2); //append value to total tax to be paid
 
             //5% of the remainder
-          priceRemiader = priceRemiader - 125000;   //125k differnce into next bracket
+           priceRemiader = priceRemiader - 125000;   //125k differnce into next bracket
             tax = tax + ((priceRemiader /100 ) * 5); //append value to total tax to be paid
         }
 

@@ -1,3 +1,5 @@
+package StampDuty;
+
 import java.util.Scanner;
 
 public class Main {
@@ -9,7 +11,6 @@ public class Main {
 	    House h = new House(price);
 	    TaxCalculator tc = new TaxCalculator();
 	    double tax=tc.calculateLBTT(h);
-3
 	    System.out.println("House Price: £"+String.format("%.2f",h.getPrice()));
 	    System.out.println("House Tax Band: "+h.getPriceBand());
 	    System.out.println("Total Tax To be paid: £"+String.format("%.2f",tax));

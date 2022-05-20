@@ -1,3 +1,5 @@
+package StampDuty;
+
 public class House {
     private double price;
     private PriceBand priceBand;

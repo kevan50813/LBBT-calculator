@@ -1,3 +1,5 @@
+package StampDuty;
+
 //enum for price bands
 //information form https://www.gov.uk/stamp-duty-land-tax/residential-property-rates
 public enum PriceBand {
