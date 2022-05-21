@@ -29,7 +29,7 @@ class TaxCalculatorTest {
     }
 
     @Test
-    void calculateLBTT() throws Exception {
+    void testCalculateLBTT() throws Exception {
         assertEquals(tc.calculateLBTT(h5),4750,"The LBTT calculation dose not work correctly");
         assertEquals(tc.calculateLBTT(h1),0,"The LBTT calculation dose not work correctly");
         assertEquals(tc.calculateLBTT(h2),2500,"The LBTT calculation dose not work correctly");
@@ -37,9 +37,10 @@ class TaxCalculatorTest {
     }
 
     @Test
-    void calculateTax() {
+    void testCalculateTax() {
         assertEquals(tc.calculateTax(1),0,"Tax Calualtor dosent work properly");
-        assertEquals(tc.calculateTax(295000),4750,"Tax Calualtor dosent work properly");
-        assertEquals(tc.calculateTax(25000),2500,"Tax Calualtor dosent work properly");
+        assertEquals(tc.calculateTax(h5.getPrice()),4750,"Tax Calualtor dosent work properly");
+        assertEquals(tc.calculateTax(h2.getPrice()),2500,"Tax Calualtor dosent work properly");
+        assertEquals(tc.calculateTax(h3.getPrice()),36250,"Tax Calualtor dosent work properly");
     }
 }

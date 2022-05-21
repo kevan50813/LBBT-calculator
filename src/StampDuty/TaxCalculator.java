@@ -38,7 +38,10 @@ public class TaxCalculator implements TaxFactory{
     public double calculateTax(double price){
         double priceRemiader=price;
         double tax = 0.0;
-        if(price <= 250000){
+        if(price <= 125000){
+            return 0.0;
+        }
+        if(price > 125000 && price <= 250000){
             priceRemiader = priceRemiader  - 125000; // no tax paid on the first 125k
 
             //2% of the remiader , sicne it sonly in the 2nd tax bracket
