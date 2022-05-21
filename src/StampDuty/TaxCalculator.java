@@ -38,6 +38,9 @@ public class TaxCalculator implements TaxFactory{
     public double calculateTax(double price){
         double priceRemiader=price;
         double tax = 0.0;
+        if(price < 0){
+            throw new IllegalArgumentException("Price should not be neagitve");
+        }
         if(price <= 125000){
             return 0.0;
         }
@@ -90,6 +93,9 @@ public class TaxCalculator implements TaxFactory{
             tax = tax + ((priceRemiader /100 ) * 12); //append value to total tax to be paid
         }
 
+        if(tax < 0){
+            throw new IllegalArgumentException("tax output should not be neagitve");
+        }
         return tax;
     }
 }

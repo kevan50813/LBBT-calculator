@@ -11,6 +11,9 @@ public class House {
     //set up house price and detrmines what price band it is in
     public House(double price){
         this.price=price;
+        if(price < 0){
+            throw new IllegalArgumentException("Price is negative: it should be posative");
+        }
         if(price <=125000){
             this.priceBand = PriceBand.BAND_A;
         }

@@ -8,6 +8,10 @@ public class Main {
 		Scanner reader = new Scanner(System.in);
 		System.out.println("Enter a house price: ");
 		double price = reader.nextDouble();
+		while (price < 0){
+			System.out.println("input must be a posative number");
+			price = reader.nextDouble();
+		}
 	    House h = new House(price);
 	    TaxCalculator tc = new TaxCalculator();
 	    double tax=tc.calculateLBTT(h);
