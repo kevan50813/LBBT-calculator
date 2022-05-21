@@ -1,11 +1,15 @@
 package StampDuty;
 
-public class TaxCalculator {
+/**
+ * Handles all logic for tax calulation,
+ * implrments TaxFactory to keep with the SOLID priciples
+ */
+public class TaxCalculator implements TaxFactory{
 
     public double calculateLBTT(House h) throws Exception {
         //decide weatehr to claate tax or not
         switch (h.getPriceBand()){
-            // if band A (<125000) there is no tax to pay
+            // if band A (<=125000) there is no tax to pay
             case BAND_A:
                 return 0.0;
             // anything else pays tax so call tge tax calculation
@@ -21,6 +25,16 @@ public class TaxCalculator {
         }
     }
 
+    /* implemnt tax calution from infomation via https://www.gov.uk/stamp-duty-land-tax/residential-property-rates
+        There are neaumerous factors that effect this calclauton but to make it as simple as possible:
+        1) 0% tax on the first 125,000 (this case is ignored)
+        2) 2% tax on the next 125,000 (or the remaideer if the amount dose not excede 250,000)
+        3) 5% tax on the next 675,000 (or the remaideer if the amount dose not excede 925,000)
+        4) 10% tax on the next 675,000 (or the remaideer if the amount dose not excede 1,500,000)
+        5) 15% tax on the remaideer
+         these vlaues are then summed and the tax is returned
+     */
+    @Override
     public double calculateTax(double price){
         double priceRemiader=price;
         double tax = 0.0;
@@ -29,10 +43,9 @@ public class TaxCalculator {
 
             //2% of the remiader , sicne it sonly in the 2nd tax bracket
             tax = tax + ((priceRemiader /100 ) * 2); //append value to total tax to be paid
-            System.out.println(tax);
         }
 
-        if(price > 250000 &&price <= 925000){
+        if(price > 250000 && price <= 925000){
           priceRemiader = priceRemiader - 125000;   // no tax paid on the first 125k
             //2% of the next 125k
             tax = tax + ((125000 /100 ) * 2); //append value to total tax to be paid

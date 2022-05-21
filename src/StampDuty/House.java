@@ -1,9 +1,14 @@
 package StampDuty;
 
+/**
+ * This class handles all the things related to the house such as
+ * detmieneing what pirce band it falls within
+ */
 public class House {
     private double price;
     private PriceBand priceBand;
 
+    //set up house price and detrmines what price band it is in
     public House(double price){
         this.price=price;
         if(price <=125000){

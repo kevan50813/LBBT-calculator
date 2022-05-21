@@ -40,5 +40,6 @@ class TaxCalculatorTest {
     void calculateTax() {
         assertEquals(tc.calculateTax(1),0,"Tax Calualtor dosent work properly");
         assertEquals(tc.calculateTax(295000),4750,"Tax Calualtor dosent work properly");
+        assertEquals(tc.calculateTax(25000),2500,"Tax Calualtor dosent work properly");
     }
 }

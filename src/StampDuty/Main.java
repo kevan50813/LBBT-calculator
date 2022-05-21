@@ -11,8 +11,7 @@ public class Main {
 	    House h = new House(price);
 	    TaxCalculator tc = new TaxCalculator();
 	    double tax=tc.calculateLBTT(h);
-	    System.out.println("House Price: £"+String.format("%.2f",h.getPrice()));
-	    System.out.println("House Tax Band: "+h.getPriceBand());
-	    System.out.println("Total Tax To be paid: £"+String.format("%.2f",tax));
+	    Stats s = new Stats(h,tax);
+	    s.printStats();
     }
 }
